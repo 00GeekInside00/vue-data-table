@@ -1,16 +1,8 @@
-import DataTableComp from './Components/v-data-table.vue'
+import Vue from "vue";
+import App from "./App.vue";
 
-const DataTable = {
-    install(Vue, options = {}) {        
-        Vue.component('data-table', DataTableComp)
-    },
-}
+Vue.config.productionTip = false;
 
-if (typeof window !== 'undefined' && window.Vue) {
-    window.Vue.use(DataTable);
-}
-
-window.DataTable = DataTable
-
-export { DataTable }
-export default DataTable
+new Vue({
+  render: h => h(App)
+}).$mount("#app");
